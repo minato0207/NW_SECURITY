@@ -1,15 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>NWSecurity</title>
+    <title>NETWORK SECURITY</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <%# <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%# <div class="contents row"> %>
+    
+  </head> 
 
   <body>
-    <%= yield %>
+    <div class = haikei>
+      <header class="header">
+          <div class="header__bar row">
+            <% if user_signed_in? %>
+              <div class="user_nav grid-6">
+                <%= link_to destroy_user_session_path, method: :delete do%>
+                  <div class="wrap">
+                    <button class="post">Log out</button>
+                  </div>
+                <% end %>
+                    <%= link_to new_post_path do%>
+                      <div class="wrap">
+                        <button class="post">New Post</button>
+                      </div>
+                    <% end %>
+                     <%= link_to current_user.nickname, "#", class: "nickname" %>
+                   
+                    
+               </div>
+            <% else %>
+              <div class="grid-6">
+                  <%= link_to new_user_session_path do%>
+                  <div class="wrap">
+                    <button class="post">Login</button>
+                  </div>
+                <% end %>
+                <%= link_to new_user_registration_path do%>
+                  <div class="wrap">
+                    <button class="post">sign up</button>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </header>
+      <%= yield %>
+    </div>
   </body>
 </html>
