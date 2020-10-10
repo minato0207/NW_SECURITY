@@ -1,93 +1,91 @@
-<div class="slider">
-  <input class="slider__nav" type="radio" name="slider" title="slide1" checked="checked"/>
-  <input class="slider__nav" type="radio" name="slider" title="slide2"/>
-  <input class="slider__nav" type="radio" name="slider" title="slide3"/>
-  <input class="slider__nav" type="radio" name="slider" title="slide4"/>
-  <div class="slider__inner">
-    <div class="slider__contents"><i class="slider__image fa fa-codepen"></i>
-      <h2 class="slider__caption">NETWORK SECURITY</h2>
-      <p class="slider__txt">Protect your app</p>
-    </div>
-    <div class="slider__contents"><i class="slider__image fa fa-newspaper-o"></i>
-      <h2 class="slider__caption">Number of searches</h2>
-      <p class="slider__txt">Detect the most used hacking method from the search history</p>
-    </div>
-    <div class="slider__contents"><i class="slider__image fa fa-television"></i>
-      <h2 class="slider__caption">television</h2>
-      <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p>
-    </div>
-    <div class="slider__contents"><i class="slider__image fa fa-diamond"></i>
-      <h2 class="slider__caption">Significance</h2>
-      <p class="slider__txt">A search app that can respond to dangerous hacks such as XSS attacks and DOS attacks</p>
-    </div>
-    
-  </div>
   
-</div>
+    <h1> 
+      <%# NETWORK SECURITYはwebサイトやアプリケーションのセキュリティーに特化した情報交換サイトです。作成過程で得た知見や情報を共有しましょう！ %>
+    </h1>
+    <div  class="open">
+      <span class="cls"></span>
+      <span>
+        <ul class="sub-menu ">
+          
+            <div class="header__bar row">
+            <li>
+              <% if user_signed_in? %>
+                <div class="user_nav grid-6">
+                <%= link_to "Logout",destroy_user_session_path, class:"post",method: :delete %>
+                <li><%= link_to current_user.nickname, user_path(current_user.id), class: "nickname" %> </li>
+            </li>
 
+            <li>
+                <%= link_to "NewPost",new_post_path ,class:"post"%>
+            </li>
+                
+            <% else %>
+              <div class="grid-6">
+            <li>
+                <%= link_to "LogIn",new_user_session_path ,class:"post"%>
+            </li>
 
-<nav class="menu-wrapper">
-  <button class="menu-btn" has-ripple="true">
-    <i></i>
-    <i></i>
-    <i></i>
-    <span class="ripple"></span>
-  </button>
-  <ul class="menu">
-    <li class="menuitem-wrapper">
-      <div class="icon-holder">
-        <a href="#" class="menu-item">
-            <i class="material-icons">home</i>
-        </a>
+            <li>
+                <%= link_to "SignUp",new_user_registration_path, class:"post"%> 
+            </li> 
+
+            
+                    
+              
+              <% end %> 
+                  
+            </div>
+
+          
+          
+        </ul>
+      </span>
+      <span class="cls"></span>
+    </div>
+
+  <div class="slider">
+    <input class="slider__nav" type="radio" name="slider" title="slide1" checked="checked"/>
+    <input class="slider__nav" type="radio" name="slider" title="slide2"/>
+    <input class="slider__nav" type="radio" name="slider" title="slide3"/>
+   
+    
+    <div class="slider__inner">
+      
+      <div class="slider__contents"><i class="slider__image fa fa-exclamation-triangle"></i>
+
+        <h2 class="slider__caption">NETWORK SECURITY</h2>
+        <p class="slider__txt">あなたのアプリは安全ですか？</p>
+        <p class="slider__txt">不安なことは検索してみましょう！</p>
+
+        <%= link_to "#" do%>
+        <div class="wrap">
+        <button class="slider__post">検索</button>
+        </div>
+        <% end %>
       </div>
-      <svg class="circle-holder">
-        <circle r="88" cx="50%" cy="50%" fill="none">
-        </circle>
-      </svg>
-    </li>
-    <li class="menuitem-wrapper">
-      <div class="icon-holder">
-        <a href="#" class="menu-item">
-            <i class="material-icons">face</i>
-        </a>
+
+      <div class="slider__contents"><i class="slider__image fa fa-archive"></i>
+        <h2 class="slider__caption">Provide information</h2>
+        <p class="slider__txt">みんなの知識や経験を参考にしよう！</p>
+        <%= link_to posts_path do%>
+        <div class="wrap">
+        <button class="slider__post">投稿を見る</button>
+        </div>
+        <% end %>
       </div>
-      <svg class="circle-holder">
-        <circle r="88" cx="50%" cy="50%" fill="none">
-        </circle>
-      </svg>
-    </li>
-    <li class="menuitem-wrapper">
-      <div class="icon-holder">
-        <a href="#" class="menu-item">
-            <i class="material-icons">android</i>
-        </a>
+
+      <div class="slider__contents"><i class="slider__image fa fa-television"></i>
+        <h2 class="slider__caption">Coming soon</h2>
+        <p class="slider__txt">Amazing features coming soon</p>
       </div>
-      <svg class="circle-holder">
-        <circle r="88" cx="50%" cy="50%" fill="none">
-        </circle>
-      </svg>
-    </li>
-    <li class="menuitem-wrapper">
-      <div class="icon-holder">
-        <a href="#" class="menu-item">
-            <i class="material-icons">shopping_cart</i>
-        </a>
+      <div class="slider__contents"><i class="slider__image fa fa-cog"></i>
+        <h2 class="slider__caption">Significance</h2>
+        <p class="slider__txt">A search app that can respond to dangerous hacks such as XSS attacks and DOS attacks</p>
       </div>
-      <svg class="circle-holder">
-        <circle r="88" cx="50%" cy="50%" fill="none">
-        </circle>
-      </svg>
-    </li>
-    <li class="menuitem-wrapper">
-      <div class="icon-holder">
-        <a href="#" class="menu-item">
-            <i class="material-icons">room</i>
-        </a>
-      </div>
-      <svg class="circle-holder">
-        <circle r="88" cx="50%" cy="50%" fill="none">
-        </circle>
-      </svg>
-    </li>
-  </ul>
-</nav>
+      
+    </div>
+  </div>
+
+<div class="underlay-photo"></div>
+<div class="underlay-black"></div>
+

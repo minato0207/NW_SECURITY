@@ -1,0 +1,116 @@
+
+ul {
+  list-style: none;
+}
+
+.search_nickname {
+  font-size: 30px;
+  margin: 20px;
+  color:  white;
+
+}
+
+.search_title {
+  font-size: 20px;
+  color:  white;
+  border-bottom: double 3px wheat;
+}
+
+.search_text{
+  margin: 20px;
+  font-size: 25px;
+}
+
+.more_list {
+  position: absolute;
+  text-align: left;
+  right: 20px;
+  font-size: 10px;
+  background-color:white;
+  display: none;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  border-bottom: 0;
+  display: block;
+  padding: 7px;
+
+  
+
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background: whitesmoke;
+  color:black;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+ 
+}
+
+p {
+  margin: 0 0 13px 0;
+}
+
+a {
+  color: #fff;
+}
+
+.center { text-align: center; }
+
+.container {
+  width: 95%;
+  max-width: 1220px;
+  margin: 0 auto;
+}
+
+.episode {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  position: relative;
+}
+
+.episode__number {
+  font-size: 30px;
+  font-weight: 600;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  text-align: center;
+  height: calc(10vw + 20px);
+  transition: all 0.2s ease-in;
+}
+
+.episode__content {
+  border-top: 2px solid #fff;
+  display: grid;
+  // grid-template-columns: 1fr 4fr;
+  grid-gap: 10px;
+  padding: 40px 0;
+  font-size: large;
+  
+}
+.story {
+  opacity: 0.5;
+}
+
+
+
+
+
+@media (max-width: 600px) {
+  .episode__content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .episode__content .story {
+    font-size: 15px;
+  }
+}
