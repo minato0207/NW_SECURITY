@@ -7,9 +7,11 @@
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
-require("../top")
+require("index")
 // require("channels")
 require("jquery")
+// require("../tag")
+
 
 
 

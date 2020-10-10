@@ -1,95 +1,92 @@
-<%# <div class="wrapper"> %>
-   <%# <header class="header"> %>
-      <%# <div class="slider__contents"><i class="slider__image fa fa-bullhorn"></i> %>
-      <%# <div class="header__bar row"> %>
-        <%# <h1 class="grid-6">Everyone's Post</h1> %>
-        <%# <p>Let's write information!</p> %>
-        <%# <%= link_to new_post_path do%>
-          <%# <div class="wrap"> %>
-          <%# <button class="slider__post">new post</button> %>
-          <%# </div> %>
-        <%# <% end %>
-      <%# </div> %>
-    <%# </header> %>
-    <%# <div class="block"> %>
-      <%# <% @posts.each do |post| %>
-          <%# <div class="content" id="content_main"> %>
-            <%# <article class="article"> %>
-            <%# <p><%= post.title</p> %>
-            <%# <p><%= post.text %>
-            <%# <p><%= post.name %>
-            <%# <p><%= post.date%>
-            <%# </article> %>
-          <%# </div> %>
-      <%# <% end %>
-    <%# </div> %>
-   
-
-    <%# <footer>
-      <p>
-        NETWORK SECURITY 2020
-      </p>
-    </footer>
- </div>   %>
-
-<div class="wrapper tabled">
+<% if user_signed_in? %>
+<div class="wrapper_tabled">
+ <button class="slider__post">
+   <%= link_to "投稿する",new_post_path %>
+ </button>
   <div class="stage" id="page1">
     <div class="middled">
+<% else %>
+  <%= link_to "投稿する",new_user_session_path ,class:"post"%>
+<% end %>
 
       <h2>Protect your app in the opinion of someone</h2>
+      <p>誰かの意見であなたのアプリを守る</p>
       <h4>find & Strengthen!</h4>
       <div class="link-1">
-        <a href="#">
-          <span class="thin">attack </span><span class="thick">XSS</span>
-        </a>
-        <p>from JavaScript</p>
+        <%= link_to search_post_path(1)  do%>
+          <span class="thin">Attack </span><span class="thick">SQL インジェクション</span>
+        <% end %>
+        
       </div>
       
       <div class="link-2">
-        <a href="#">
-          <span class="thin">attack </span><span class="thick">Dos</span>
-        </a>
-        <p>from karilinaxu</p>
+        <%= link_to search_post_path(2)  do%>
+          <span class="thin">Attack </span><span class="thick">OS コマンドインジェクション</span>
+        <% end %>
+     
       </div>
       
       <div class="link-3">
-        <a href="#">
-          <span class="thin">link</span><span class="thick">three</span>
-        </a>
-        <p>fat underline</p>    
+        <%= link_to search_post_path(3)  do%>
+          <span class="thin">Attack </span><span class="thick">LDAP インジェクション</span>
+        <% end %>
+        
       </div>
 
       <div class="link-4">
-        <a href="#">
-          <span class="thin">link</span><span class="thick">four</span>
-        </a>
-        <p>underline color change</p>    
+       <%= link_to search_post_path(4)  do%>
+          <span class="thin">Attack </span><span class="thick">DoS/DDoS</span>
+         <% end %>
+         
       </div>
 
       <div class="link-5">
-        <a href="#">
-          <span class="thin">link</span><span class="thick">five</span>
-        </a>
-        <p>three + four</p>    
+        <%= link_to search_post_path(5)  do%>
+          <span class="thin">Attack </span><span class="thick">クロスサイトスクリプティング</span>
+        <% end %>
+       
       </div>
 
       <div class="link-6">
-        <a href="#">
-          <span class="thin">link</span><span class="thick">six</span>
-        </a>
-        <p>minor scale up</p>    
+        <%= link_to search_post_path(6)  do%>
+          <span class="thin">Attack </span><span class="thick">ディレクトリ・トラバーサル</span>
+        <% end %>
+         
       </div>
 
       <div class="link-7">
-        <a href="#">
-          <span class="thin">link</span><span class="thick">seven</span>
-        </a>
-        <p>heartbeat</p>    
+       <%= link_to search_post_path(7)  do%>
+          <span class="thin">Attack </span><span class="thick">ドライブバイダウンロード</span>
+        <% end %>
+       
       </div>
+
+      <div class="link-3">
+       <%= link_to search_post_path(8)  do%>
+          <span class="thin">Attack </span><span class="thick">ゼロデイ</span>
+        <% end %>
+        
+      </div>
+
+      <div class="link-4">
+       <%= link_to search_post_path(9)  do%>
+          <span class="thin">Attack </span><span class="thick">パスワードリスト</span>
+        <% end %>
+          
+      </div>
+
+      <div class="link-2">
+        <%= link_to search_post_path(10)  do%>
+          <span class="thin">Attack </span><span class="thick">ブルートフォースアタック</span>
+        <% end %>
+        
+      </div>
+
     </div>
  
   </div>
 </div>
 
-
+<div class="underlay-photo"></div>
+<div class="underlay-black"></div>
  

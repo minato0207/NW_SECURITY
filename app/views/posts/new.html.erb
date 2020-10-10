@@ -1,11 +1,45 @@
-<div class="contents row">
-  <div class="container">
-    <h3>NEW POST</h3>
-    <%= form_with(model: @post, local: true) do |form| %>
-      <%= form.text_field :name, placeholder: "Nickname" %>
+<div class="login-text">
+  <h3>NEW POST</h3>
+  
+  <%= form_with(model: @post, url: posts_path, local: true) do |form| %>
+   <%= render 'layouts/error_messages', model: form.object %>
+
+    <div class ="login-username">
+    <p>NICKNAME</p>
+      <%= current_user.nickname %>
+    </div>
+
+    <div class ="login-username">
+    <p>TITLE</p>
       <%= form.text_field :title, placeholder: "タイトルを入力" %>
+    </div>
+
+
+   
+      <div class="login-username", id='tag-field'>
+        <%= form.label :name, "タグ" %>
+        <%= form.text_field :name, class:"input-tag" %>
+      </div>
+      <div id="search-result">
+      </div>
+    
+
+
+    <div class ="login-username">
+    <p>Type</p>
+      <%= form.collection_select(:security_id, Security.all, :id, :name, {include_blank: "--"}, {class:"security-select"}) %>
+    </div>
+
+    <div class ="text">
+     <p>TEXT</p>
       <%= form.text_area :text, placeholder: "text", rows: "10" %>
+    </div>
+    
       <%= form.submit "SEND" %>
-    <% end %>
-  </div>
+
+      
+  <% end %>
+  
 </div>
+<div class="underlay-photo"></div>
+<div class="underlay-black"></div>

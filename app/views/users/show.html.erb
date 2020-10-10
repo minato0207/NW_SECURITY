@@ -1,0 +1,94 @@
+
+<div class="muck-up">
+  <div class="overlay"></div>
+  <div class="top">
+    <div class="nav">
+      <span class="ion-android-menu"></span>
+      <p>Myプロフィール</p>
+      <span class="ion-ios-more-outline"></span>
+    </div>
+    <div class="user-profile">
+    <%# 画像をつける %>
+      <%# <img src="https://raw.githubusercontent.com/arjunamgain/FilterMenu/master/images/profile.jpg"> %>
+      <div class="user-details">
+        <%= @user.nickname %>
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="filter-btn">
+    <%= link_to "編集", edit_user_registration_path %>
+    <%# <a id="one" href="#"><i class="ion-ios-checkmark-outline"></i></a>
+    <a id="two" href="#"><i class="ion-ios-alarm-outline"></i></a>
+    <a id="three" href="#"><i class="ion-ios-heart-outline"></i></a>
+    <a id="all" href="#"><i class="ion-ios-star-outline"></i></a> %>
+    
+  </div>
+  <div class="clearfix"></div>
+  <div class="bottom">
+    <div class="title">
+      <h3>投稿</h3>
+      <small><%= @user.created_at %>から開始</small>
+    </div>
+    <ul class="tasks">
+      <li class="one red">
+         <% @post.each do |post| %>
+           <% if @user.id == post.user.id %>
+              <span class="task-title"><%= post.title %></span>
+              <span class="task-time"><%= post.created_at %></span>
+              <span class="task-time"><%= link_to '削除', post_path(post.id), method: :delete %></span>
+              <span class="task-cat"><%= post.text%></span>
+            <% end %>
+          <% end %>
+       
+      </li>
+      <div class="title">
+       <h3>いいね</h3>
+      
+      </div>
+      <li class="one red">
+        <span class="task-title">Catch up with Brian</span>
+        <span class="task-time">3pm</span>
+        <span class="task-cat">Mobile Project</span>
+
+      </li>
+      <li class="two green">
+        <span class="task-title">Design Explorations</span>
+        <span class="task-time">2pm</span>
+        <span class="task-cat">Company Web site</span>
+
+      </li>
+      </li>
+      <li class="tow green hang">
+        <span class="task-title">Team Meeting</span>
+        <span class="task-time">2pm</span>
+        <span class="task-cat">Hangouts</span>
+        <img src="https://raw.githubusercontent.com/arjunamgain/FilterMenu/master/images/2.jpg">
+        <img src="https://raw.githubusercontent.com/arjunamgain/FilterMenu/master/images/3.jpg">
+        <img src="https://raw.githubusercontent.com/arjunamgain/FilterMenu/master/images/profile.jpg">
+      </li>
+      <li class="three yellow">
+        <span class="task-title">New Projects</span>
+        <span class="task-time">2pm</span>
+        <span class="task-cat">Starting</span>
+
+
+      </li>
+
+      <li class="three yellow">
+        <span class="task-title">Lunch with Mary</span>
+        <span class="task-time">2pm</span>
+        <span class="task-cat">Grill House</span>
+      </li>
+      <li class="three yellow">
+        <span class="task-title">Team Meeting</span>
+        <span class="task-time">2pm</span>
+        <span class="task-cat">Hangouts</span>
+      </li>
+
+    </ul>
+  </div>
+</div>
+<div class="underlay-photo"></div>
+<div class="underlay-black"></div>
+
