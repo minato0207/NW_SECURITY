@@ -41,7 +41,14 @@ ul {
   
 
 }
-
+.center_c{
+  font-size: 20px;
+  opacity: 0.5;
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  border: solid 3px white;
+}
 
 *,
 *::before,
@@ -62,7 +69,7 @@ p {
 }
 
 a {
-  color: #fff;
+  color: white;
 }
 
 .center { text-align: center; }

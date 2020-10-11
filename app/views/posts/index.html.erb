@@ -1,8 +1,12 @@
 <% if user_signed_in? %>
 <div class="wrapper_tabled">
+ <%= link_to  root_path do%>
+   <h3 class="center_i">←トップページへ戻る</h3>
+  <% end %>
  <button class="slider__post">
    <%= link_to "投稿する",new_post_path %>
  </button>
+ 
   <div class="stage" id="page1">
     <div class="middled">
 <% else %>
@@ -11,7 +15,7 @@
 
       <h2>Protect your app in the opinion of someone</h2>
       <p>誰かの意見であなたのアプリを守る</p>
-      <h4>find & Strengthen!</h4>
+      <h4><i class="fa fa-arrow-down"></i> カテゴリーから記事を見つけよう！ <i class="fa fa-arrow-down"></i></h4>
       <div class="link-1">
         <%= link_to search_post_path(1)  do%>
           <span class="thin">Attack </span><span class="thick">SQL インジェクション</span>
@@ -85,6 +89,7 @@
     </div>
  
   </div>
+ 
 </div>
 
 <div class="underlay-photo"></div>
