@@ -5,10 +5,13 @@ class Post < ApplicationRecord
   validates  :title, :text, :security_id, presence: true
 
   belongs_to :user
-
   has_many :post_tag_relations
   has_many :tags, through: :post_tag_relations
+  has_many :comments
+  has_many :favorites
 
+
+  
 
   def self.search(search)
     if search != ""
@@ -17,5 +20,10 @@ class Post < ApplicationRecord
     #   puts 投稿がありません
     end
   end
+
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end 
+
 
 end

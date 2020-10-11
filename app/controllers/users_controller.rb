@@ -4,7 +4,9 @@ class UsersController < ApplicationController
 
 
   def show
+    @user = User.find(params[:id])
     @post = Post.all.order("created_at DESC")
+    @favorite_posts = @user.favorite_posts 
   end
 
   def destroy

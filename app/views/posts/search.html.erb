@@ -1,8 +1,11 @@
 
 <body>
+
  
   <div class="container">
-    <h1 class="center">投稿一覧</h1>
+    <h1 class="center">
+    
+    </h1>
     <% @posts.each do |post| %>
       <article class="episode">
         <li class ="more_list">
@@ -16,7 +19,7 @@
           <div class="title">"<%= post.title%>"</div>
        
           <div class="story">
-            <%= post.text %>
+            <%= post.text.truncate(50) %>
           </div>
           <ul class="tag">
           <li class="tag-list">
@@ -31,6 +34,6 @@
  </div>
   <h3 class="center"><a href="https://www.instagram.com/aristidebenoist/" target="_blank" rel="noopener noreferer">Inspired by Aristide Benoist</a></h3>
 </body>
-<%# <div class="underlay-photo"></div>
-<div class="underlay-black"></div> %>
+<div class="underlay-photo"></div>
+<div class="underlay-black"></div>
 

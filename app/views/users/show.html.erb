@@ -17,25 +17,27 @@
   </div>
   <div class="clearfix"></div>
   <div class="filter-btn">
+    <%# <% if current_user.id == @post.user_id %>
     <%= link_to "編集", edit_user_registration_path %>
-    <%# <a id="one" href="#"><i class="ion-ios-checkmark-outline"></i></a>
-    <a id="two" href="#"><i class="ion-ios-alarm-outline"></i></a>
-    <a id="three" href="#"><i class="ion-ios-heart-outline"></i></a>
-    <a id="all" href="#"><i class="ion-ios-star-outline"></i></a> %>
+     <%# <a id="one" href="#"><i class="ion-ios-checkmark-outline"></i></a>
+    # <a id="two" href="#"><i class="ion-ios-alarm-outline"></i></a>
+    # <a id="three" href="#"><i class="ion-ios-heart-outline"></i></a>
+    # <a id="all" href="#"><i class="ion-ios-star-outline"></i></a> %>
+     <%# <% end %>
     
   </div>
   <div class="clearfix"></div>
   <div class="bottom">
     <div class="title">
       <h3>投稿</h3>
-      <small><%= @user.created_at %>から開始</small>
+      <small><%= @user.created_at.strftime("%Y-%m-%d %H:%M") %>から開始</small>
     </div>
     <ul class="tasks">
       <li class="one red">
          <% @post.each do |post| %>
            <% if @user.id == post.user.id %>
               <span class="task-title"><%= post.title %></span>
-              <span class="task-time"><%= post.created_at %></span>
+              <span class="task-time"><%= post.created_at.strftime("%Y-%m-%d %H:%M") %></span>
               <span class="task-time"><%= link_to '削除', post_path(post.id), method: :delete %></span>
               <span class="task-cat"><%= post.text%></span>
             <% end %>
@@ -43,16 +45,15 @@
        
       </li>
       <div class="title">
-       <h3>いいね</h3>
       
-      </div>
-      <li class="one red">
-        <span class="task-title">Catch up with Brian</span>
-        <span class="task-time">3pm</span>
-        <span class="task-cat">Mobile Project</span>
+      
+        <% @favorite_posts.each do |post| %>
+          <hr>
+          <p><i class="fa fa-thumbs-up"></i><%=link_to  post_path(post.id) %></p>
+        <% end %>
 
-      </li>
-      <li class="two green">
+      </div>
+      <%# <li class="two green">
         <span class="task-title">Design Explorations</span>
         <span class="task-time">2pm</span>
         <span class="task-cat">Company Web site</span>
@@ -87,8 +88,8 @@
       </li>
 
     </ul>
-  </div>
-</div>
+  </div> %>
+ </div>
 <div class="underlay-photo"></div>
 <div class="underlay-black"></div>
 

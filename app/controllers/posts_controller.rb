@@ -21,14 +21,16 @@ class PostsController < ApplicationController
 
   def search
     @posts = Post.search(params[:id])
-    # return nil if params[:input] == ""
-    # tag = Tag.where(['name LIKE ?', "%#{params[:input]}%"] )
-    # render json:{ keyword: tag }
+    
   end
 
   def show
     @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user)
   end
+
+    
   
   def destroy
     post = Post.find(params[:id])
