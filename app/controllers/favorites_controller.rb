@@ -3,7 +3,7 @@ class FavoritesController < ApplicationController
     
     favorite = current_user.favorites.build(post_id: params[:post_id])
     favorite.save
-    redirect_to post_path 
+    redirect_to posts_path 
   end
 
   def destroy
