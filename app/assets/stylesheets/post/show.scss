@@ -1,0 +1,43 @@
+.contents_row{
+  padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #00BCD4;
+    background: rgba(255,255,255,0.2);
+    border-top: solid 6px wheat;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+}
+
+.name{
+  margin: 20px;
+ 
+}
+.post_all{
+ text-align: center;
+}
+
+.post_title{
+  color: white;
+  padding: 12px;
+  border-bottom: 2px solid white;
+}
+
+.post_text{
+  color: white;
+  padding: 15px;
+  border-bottom: 2px solid white;
+}
+
+.task-time{
+  font-size: 20px;
+  color: white;
+  padding: 20px;
+  border-bottom: 2px solid white;
+}
+.comments{
+  font-size: 20px;
+}
+
+.comments_itirann{
+
+  border-top: 2px solid wheat;
+}
