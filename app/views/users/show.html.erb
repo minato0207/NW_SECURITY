@@ -9,7 +9,7 @@
     </div>
     <div class="user-profile">
     <%# 画像をつける %>
-      <%# <img src="https://raw.githubusercontent.com/arjunamgain/FilterMenu/master/images/profile.jpg"> %>
+      <%= image_tag @user.image.variant(resize: '100x100'), class: 'message-image' if @user.image.attached? %>
       <div class="user-details">
         <%= @user.nickname %>
       </div>
