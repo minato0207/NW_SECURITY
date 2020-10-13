@@ -2,6 +2,17 @@ class PostsController < ApplicationController
   
   def index 
     @posts = Post.order("created_at DESC")
+    if params[:search].present?
+      posts = Post.posts_serach(params[:search])
+    elsif params[:tag_id].present?
+      @tag = Tag.find(params[:tag_id])
+      posts = @tag.posts.order(created_at: :desc)
+    else
+      posts = Post.all.order(created_at: :desc)
+    end
+    @tag_lists = Tag.all
+    # @posts = Kaminari.paginate_array(posts).page(params[:page]).per(10)
+    
   end
 
   def new
@@ -17,11 +28,21 @@ class PostsController < ApplicationController
     else
       render :new
     end
+
+    tag_list = params[:post][:name].split(nil)
+    @item.image.attach(params[:post])
+    @item.user_id = current_user.id
+    if @item.save
+       @item.save_items(tag_list)
+      redirect_to posts_path
+    else
+      flash.now[:alert] = '投稿に失敗しました'
+      render 'new'
+    end
   end
 
   def search
     @posts = Post.search(params[:id])
-    
   end
 
   def show
@@ -36,6 +57,13 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     post.destroy
   end
+
+  def tag_search
+    @posts = Post.joins(:tags).where(tags:{id: params[:tag_id]})
+  end
+
+    
+
 
 
 

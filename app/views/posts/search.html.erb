@@ -1,8 +1,12 @@
 
 <body>
+  <%= link_to posts_path do%>
+     <h3 class="center_c">←カテゴリー選択へ戻る</h3>
+   <% end %>
 
  
   <div class="container">
+   
     <h1 class="center">
     
     </h1>
@@ -11,9 +15,11 @@
         <li class ="more_list">
          <%= link_to "詳細", post_path(post.id), method: :get %>
        </li>
-        <%= link_to user_path(post.user.id) do%>
-        <div class="episode__number"><%= post.user.nickname%></div>
+
+        <%= link_to user_path(post.user_id) do%>
+         <div class="episode__number"><%= post.user.nickname%></div>
         <% end %>
+        
         <div class="episode__content">
         
           <div class="title">"<%= post.title%>"</div>
@@ -23,16 +29,20 @@
           </div>
           <ul class="tag">
           <li class="tag-list">
-            <% post.tags.each do |tag| %>
-              #<%=tag.name%>
-            <%end%>
+          
+             <% post.tags.each do |tag| %>
+               #<%= tag.name %>
+             <%end%>
+            
           </li>
         </ul>
         </div>
       </article>
     <% end %>
  </div>
-  <h3 class="center"><a href="https://www.instagram.com/aristidebenoist/" target="_blank" rel="noopener noreferer">Inspired by Aristide Benoist</a></h3>
+
+ 
+
 </body>
 <div class="underlay-photo"></div>
 <div class="underlay-black"></div>
