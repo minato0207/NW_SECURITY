@@ -8,6 +8,9 @@
   <div class="container">
    
     <h1 class="center">
+    <%= link_to  posts_path do%>
+      <h3 class="center_c">←カテゴリー選択へ戻る</h3>
+    <% end %>
     
     </h1>
     <% @posts.each do |post| %>
@@ -41,7 +44,9 @@
     <% end %>
  </div>
 
+
  
+
 
 </body>
 <div class="underlay-photo"></div>
