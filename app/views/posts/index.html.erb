@@ -1,87 +1,104 @@
-<% if user_signed_in? %>
-<div class="wrapper_tabled">
- <%= link_to  root_path do%>
-   <h3 class="center_i">←トップページへ戻る</h3>
-  <% end %>
- <button class="slider__post">
-   <%= link_to "投稿する",new_post_path %>
- </button>
- 
-  <div class="stage" id="page1">
-    <div class="middled">
-<% else %>
-  <%= link_to "投稿する",new_user_session_path ,class:"post"%>
-<% end %>
 
-      <h2>Protect your app in the opinion of someone</h2>
-      <p>誰かの意見であなたのアプリを守る</p>
-      <h4><i class="fa fa-arrow-down"></i> カテゴリーから記事を見つけよう！ <i class="fa fa-arrow-down"></i></h4>
+<div class = "body_p">
+  <%= link_to root_path do%>
+      <h3 class="center_i">←トップページへ戻る</h3>
+    <% end %>
+
+
+    
+
+     <div class ="post_title_1">
+       <h2>Protect your app in the opinion of someone</h2>
+       <p>誰かの意見であなたのアプリを守る</p>
+      
+
+      
+ 
+     <p class ="tag_all_p"><i class="fa fa-arrow-down"></i> タグで探す <i class="fa fa-arrow-down"></i></p>
+      <li class ="tag_all">
+       <ul><% @tag_lists.each do |list|%>
+         <%= link_to list.name,post_path(tag_id: list.id), class: 'tag_list'%>
+         <% end %>
+        </ul>
+     </li>
+
+    <p class="tag_list_box">
+       <% tag.each do |tag|%>
+         <%= link_to "#{tag.name}", posts_path(tag), class: 'smaller tag_list'%>
+       <% end %>
+    </p>
+      
+        <div class ="find_1">
+         <h4><i class="fa fa-arrow-down"></i>  カテゴリーから選ぶ <i class="fa fa-arrow-down"></i></h4>
+        </div>
+      </div>
+
       <div class="link-1">
         <%= link_to search_post_path(1)  do%>
-          <span class="thin">Attack </span><span class="thick">SQL インジェクション</span>
+          <span class="thin"><i class="fa fa-search-plus"></i> Attack </span><span class="thick">SQL インジェクション</span>
         <% end %>
         
       </div>
       
       <div class="link-2">
         <%= link_to search_post_path(2)  do%>
-          <span class="thin">Attack </span><span class="thick">OS コマンドインジェクション</span>
+          <span class="thin"><i class="fa fa-search-plus"></i> Attack </span><span class="thick">OS コマンドインジェクション</span>
         <% end %>
      
       </div>
       
       <div class="link-3">
         <%= link_to search_post_path(3)  do%>
-          <span class="thin">Attack </span><span class="thick">LDAP インジェクション</span>
+          <span class="thin"><i class="fa fa-search-plus"></i> Attack </span><span class="thick">LDAP インジェクション</span>
         <% end %>
         
       </div>
 
       <div class="link-4">
        <%= link_to search_post_path(4)  do%>
-          <span class="thin">Attack </span><span class="thick">DoS/DDoS</span>
+          <span class="thin"><i class="fa fa-search-plus"></i> Attack </span><span class="thick">DoS/DDoS</span>
          <% end %>
          
       </div>
 
       <div class="link-5">
         <%= link_to search_post_path(5)  do%>
-          <span class="thin">Attack </span><span class="thick">クロスサイトスクリプティング</span>
+          <span class="thin"><i class="fa fa-search-plus"></i> Attack </span><span class="thick">クロスサイトスクリプティング</span>
         <% end %>
        
       </div>
 
       <div class="link-6">
         <%= link_to search_post_path(6)  do%>
-          <span class="thin">Attack </span><span class="thick">ディレクトリ・トラバーサル</span>
+          <span class="thin"><i class="fa fa-search-plus"></i> Attack </span><span class="thick">ディレクトリ・トラバーサル</span>
         <% end %>
          
       </div>
 
       <div class="link-7">
        <%= link_to search_post_path(7)  do%>
-          <span class="thin">Attack </span><span class="thick">ドライブバイダウンロード</span>
+          <span class="thin"> <i class="fa fa-search-plus"></i> Attack </span><span class="thick">ドライブバイダウンロード</span>
         <% end %>
        
       </div>
 
       <div class="link-3">
        <%= link_to search_post_path(8)  do%>
-          <span class="thin">Attack </span><span class="thick">ゼロデイ</span>
+          <span class="thin"><i class="fa fa-search-plus"></i> Attack </span><span class="thick">ゼロデイ</span>
         <% end %>
         
       </div>
 
       <div class="link-4">
        <%= link_to search_post_path(9)  do%>
-          <span class="thin">Attack </span><span class="thick">パスワードリスト</span>
+          <span class="thin"><i class="fa fa-search-plus"></i> Attack </span><span class="thick">パスワードリスト</span>
         <% end %>
           
       </div>
 
       <div class="link-2">
         <%= link_to search_post_path(10)  do%>
-          <span class="thin">Attack </span><span class="thick">ブルートフォースアタック</span>
+          <span class="thin"><i class="fa fa-search-plus"></i> Attack </span><span class="thick">ブルートフォースアタック</span>
         <% end %>
         
       </div>

@@ -2,6 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.body_p{
+  padding: 60px;
+}
+
+.post_title_1{
+  text-align: center;
+  color: wheat;
+  .post_title_1,p{
+   
+    padding: 20px;
+    opacity: 0.5;
+  }
+}
+
 
 .container{
   display: flex;
@@ -12,9 +26,26 @@
   font-size: 20px;
 }
 
-.wrapper_tabled{
+
+.center_i {
   text-align: center;
+  font-size: 15px;
+  opacity: 0.5;
+  margin : 2em 0 1.5em ;
+  text-align: left;
+
+  
 }
+.find_1{
+  border-bottom: 2px solid white;
+  border-top: 2px solid white;
+  margin: auto;
+  opacity: 0.7;
+
+}
+
+
+
 
   .grid-6 {
       height: 100%;
@@ -61,14 +92,38 @@
     padding: 0;
   
   }
-  .center_i{
-    font-size: 20px;
-    opacity: 0.5;
-    padding: 0.5em 1em;
-    margin: 2em 0;
-    font-weight: bold;
-    border: solid 3px white;
-  }
+
+
+ .tag_all{
+  list-style: none;
+ }
+ .tag_list {
+  list-style: none;
+  font-size: small;
+  padding: 1em 1em;
+  margin:2em 0;
+  opacity: 0.8;
+  background-color: gray;/*背景色*/
+  border-left: solid 10px wheat;/*左ライン*/
+  color:white;/*文字色*/
+  width: 300px;
+ }
+
+ .tag_all_p {
+  border-bottom: 2px solid white;
+  border-top: 2px solid white;
+  margin: auto;
+
+
+ }
+ 
+
+
+
+
+
+
+
 // ----------------------------------------------------------------------------
   @import url(https://fonts.googleapis.com/css?family=Lato:100,300,900);
 

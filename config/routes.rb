@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'favorites/create'
   get 'favorites/destroy'
   get 'users/show'
+  get '/post' => 'posts#tag_search'
+ 
   
   devise_for :users, controllers: {
    omniauth_callbacks: 'users/omniauth_callbacks',
@@ -13,7 +15,7 @@ Rails.application.routes.draw do
   root 'top#index'
   resources :posts do
     resources :comments, only: :create
-
+    
     resource :favorites, only: [:create, :destroy]
 
     member do
@@ -22,7 +24,7 @@ Rails.application.routes.draw do
 
   end
 
-
+ 
 
 
   

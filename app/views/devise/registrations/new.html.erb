@@ -15,6 +15,10 @@
         <%= f.label :nickname %> <em>(6 characters maximum)</em><br />
         <%= f.text_field :nickname, autofocus: true, maxlength: "6" %>
       </div>
+      <label class="login-username">
+        <span class="image-file">画像</span>
+        <%= f.file_field :image, class: 'hidden' %>
+      </label>
 
       <div class="login-username">
         <%= f.label :email %>

@@ -9,7 +9,9 @@
     </div>
     <div class="user-profile">
     <%# 画像をつける %>
-      <img src="<%= "/user_images/#{@user.image_name}" %>">
+
+      <%= image_tag @user.image.variant(resize: '100x100'), class: 'message-image' if @user.image.attached? %>
+
       <div class="user-details">
         <%= @user.nickname %>
       </div>
@@ -37,11 +39,12 @@
     <ul class="tasks">
       <li class="one red">
          <% @post.each do |post| %>
-           <% if @user.id == post.user.id %>
+           <% if @user.id == post.user_id %>
               <span class="task-title"><%= post.title %></span>
               <span class="task-time"><%= post.created_at.strftime("%Y-%m-%d %H:%M") %></span>
               <span class="task-time"><%= link_to '削除', post_path(post.id), method: :delete %></span>
               <span class="task-cat"><%= post.text%></span>
+              
             <% end %>
           <% end %>
        

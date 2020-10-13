@@ -164,10 +164,11 @@ body {
 
     &__txt {
         color: wheat;
-        margin-bottom: 2rem;
-        max-width: 300px;
+        margin-bottom: 3rem;
         transition: all 0.5s;
         font-size: large;
+        
+
     }
     &__search {
       color: rgb(99, 96, 96);
@@ -319,7 +320,7 @@ transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             width: 100%;
             display: block;
             float: left;
-            line-height: 40px;
+            line-height: 20px;
         }
     }
 }
