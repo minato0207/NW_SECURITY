@@ -11,13 +11,21 @@ class PostsController < ApplicationController
       posts = Post.all.order(created_at: :desc)
     end
     @tag_lists = Tag.all
-    # @posts = Kaminari.paginate_array(posts).page(params[:page]).per(10)
+    @posts = Kaminari.paginate_array(posts).page(params[:page]).per(10)
     
   end
 
   def new
     @post = PostsTag.new
   end
+
+  def top
+    @post = Post.search(params[:search])
+    @posts = Post.order("created_at DESC")
+    
+  end
+  
+
 
 
   def create
@@ -43,12 +51,15 @@ class PostsController < ApplicationController
 
   def search
     @posts = Post.search(params[:id])
+    @post = Post.search(params[:search])
+    @posty = Post.where(params[:id]) 
   end
 
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
     @comments = @post.comments.includes(:user)
+   
   end
 
     
@@ -61,6 +72,16 @@ class PostsController < ApplicationController
   def tag_search
     @posts = Post.joins(:tags).where(tags:{id: params[:tag_id]})
   end
+
+  def edit
+    @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = @post.comments.includes(:user)
+  end
+  
+  
+
+
 
     
 

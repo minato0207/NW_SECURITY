@@ -12,30 +12,32 @@
 
  
   <% @posts.each do |posts| %>
-   <%# <article class="episode">
-    <li class ="more_list"> %>
-      <%# <%= link_to "詳細", post_path(post.id), method: :get %> 
-    <%# </li> %>
-
+   <article class="episode">
+    <li class ="more_list">
+      <%= link_to "詳細",  edit_post_path(posts.id), method: :get%> 
+   </li>
+    
 
    <%= link_to user_path(posts.user_id) do%>
      <div class="episode__number"><%= posts.user.nickname%></div>
     <% end %>
 
-    <div class="episode__content">
-        
-   <div class="title">"<%= posts.title%>"</div>
+    <div class="episode__content">  
+      <div class="title">"<%= posts.title%>"</div>
 
-   <div class="story">
-     <%= posts.text.truncate(50) %>
-   </div>
-   <ul class="tag">
-    <li class="tag-list">
-      <% posts.tags.each do |tag| %>
-        #<%=tag.name%>
-     <%end%>
-    </li>
-   <% end %>
+      <div class="story">
+        <%= posts.text.truncate(50) %>
+      </div>
+      <ul class="tag">
+        <li class="tag-list">
+          <% posts.tags.each do |tag| %>
+            #<%=tag.name%>
+        <%end%>
+        </li>
+      </ul>
+    
+  <% end %>
+  
 </div>
 
 <div class="underlay-photo"></div>

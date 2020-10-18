@@ -1,52 +1,7 @@
   
-    <h1> 
-      <%# NETWORK SECURITYはwebサイトやアプリケーションのセキュリティーに特化した情報交換サイトです。作成過程で得た知見や情報を共有しましょう！ %>
-    </h1>
-    <div  class="open">
-      <span class="cls"></span>
-      <span>
-        <ul class="sub-menu ">
-          
-            <div class="header__bar row">
-            <li>
-              <% if user_signed_in? %>
-                <div class="user_nav grid-6">
-                <%= link_to "Logout",destroy_user_session_path, class:"post",method: :delete %>
-            </li>
-             <li>
-               <%= link_to current_user.nickname, user_path(current_user.id), class: "post" %> 
-              </li>
-            
-
-            <li>
-                <%= link_to "NewPost",new_post_path ,class:"post"%>
-            </li>
-                
-            <% else %>
-              <div class="grid-6">
-            <li>
-                <%= link_to "LogIn",new_user_session_path ,class:"post"%>
-            </li>
-
-            <li>
-                <%= link_to "SignUp",new_user_registration_path, class:"post"%> 
-            </li> 
-
-            
-                    
-              
-              <% end %> 
-                  
-            </div>
-
-          
-          
-        </ul>
-      </span>
-      <span class="cls"></span>
-    </div>
-
+  
   <div class="slider">
+  
     <input class="slider__nav" type="radio" name="slider" title="slide1" checked="checked" />
     <input class="slider__nav" type="radio" name="slider" title="slide2"/>
     <input class="slider__nav" type="radio" name="slider" title="slide3"/>
@@ -70,7 +25,7 @@
       <div class="slider__contents"><i class="slider__image fa fa-archive"></i>
         <h2 class="slider__caption">Provide information</h2>
         <p class="slider__txt">みんなの知識や経験を参考にしよう！</p>
-        <%= link_to posts_path do%>
+        <%= link_to  posttop_path do%>
         <div class="wrap">
         <button class="slider__post">投稿を見る</button>
         </div>

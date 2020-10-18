@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'favorites/destroy'
   get 'users/show'
   get '/post' => 'posts#tag_search'
+  get '/posttop'=>'posts#top'
  
   
   devise_for :users, controllers: {
@@ -13,13 +14,14 @@ Rails.application.routes.draw do
   resources :users, only: :show 
 
   root 'top#index'
-  resources :posts do
-    resources :comments, only: :create
+  resources :posts  do
+    resources :comments, only: [:create, :edit, :update, :destroy]
     
     resource :favorites, only: [:create, :destroy]
 
     member do
       get 'search'
+      
     end
 
   end

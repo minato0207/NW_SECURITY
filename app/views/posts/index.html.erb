@@ -1,7 +1,7 @@
 
 <div class = "body_p">
-  <%= link_to root_path do%>
-      <h3 class="center_i">←トップページへ戻る</h3>
+  <%= link_to posttop_path do%>
+      <h3 class="center_i">←一覧へ戻る</h3>
     <% end %>
 
 
@@ -10,8 +10,11 @@
      <div class ="post_title_1">
        <h2>Protect your app in the opinion of someone</h2>
        <p>誰かの意見であなたのアプリを守る</p>
-      
 
+      
+      <div class="banner">Search!!</div>
+
+       
       
  
      <p class ="tag_all_p"><i class="fa fa-arrow-down"></i> タグで探す <i class="fa fa-arrow-down"></i></p>
@@ -28,47 +31,50 @@
        <% end %>
     </p>
       
-        <div class ="find_1">
+        <div class ="find_7">
          <h4><i class="fa fa-arrow-down"></i>  カテゴリーから選ぶ <i class="fa fa-arrow-down"></i></h4>
         </div>
       </div>
 
-      <div class="link-1">
+
+
+      
+      <div class="link-7">
         <%= link_to search_post_path(1)  do%>
           <span class="thin"><i class="fa fa-search-plus"></i> Attack </span><span class="thick">SQL インジェクション</span>
         <% end %>
         
       </div>
       
-      <div class="link-2">
+      <div class="link-7">
         <%= link_to search_post_path(2)  do%>
           <span class="thin"><i class="fa fa-search-plus"></i> Attack </span><span class="thick">OS コマンドインジェクション</span>
         <% end %>
      
       </div>
       
-      <div class="link-3">
+      <div class="link-7">
         <%= link_to search_post_path(3)  do%>
           <span class="thin"><i class="fa fa-search-plus"></i> Attack </span><span class="thick">LDAP インジェクション</span>
         <% end %>
         
       </div>
 
-      <div class="link-4">
+      <div class="link-7">
        <%= link_to search_post_path(4)  do%>
           <span class="thin"><i class="fa fa-search-plus"></i> Attack </span><span class="thick">DoS/DDoS</span>
          <% end %>
          
       </div>
 
-      <div class="link-5">
+      <div class="link-7">
         <%= link_to search_post_path(5)  do%>
           <span class="thin"><i class="fa fa-search-plus"></i> Attack </span><span class="thick">クロスサイトスクリプティング</span>
         <% end %>
        
       </div>
 
-      <div class="link-6">
+      <div class="link-7">
         <%= link_to search_post_path(6)  do%>
           <span class="thin"><i class="fa fa-search-plus"></i> Attack </span><span class="thick">ディレクトリ・トラバーサル</span>
         <% end %>
@@ -82,21 +88,21 @@
        
       </div>
 
-      <div class="link-3">
+      <div class="link-7">
        <%= link_to search_post_path(8)  do%>
           <span class="thin"><i class="fa fa-search-plus"></i> Attack </span><span class="thick">ゼロデイ</span>
         <% end %>
         
       </div>
 
-      <div class="link-4">
+      <div class="link-7">
        <%= link_to search_post_path(9)  do%>
           <span class="thin"><i class="fa fa-search-plus"></i> Attack </span><span class="thick">パスワードリスト</span>
         <% end %>
           
       </div>
 
-      <div class="link-2">
+      <div class="link-7">
         <%= link_to search_post_path(10)  do%>
           <span class="thin"><i class="fa fa-search-plus"></i> Attack </span><span class="thick">ブルートフォースアタック</span>
         <% end %>
