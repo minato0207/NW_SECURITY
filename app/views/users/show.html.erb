@@ -19,15 +19,9 @@
   </div>
   <div class="clearfix"></div>
   <div class="filter-btn">
-    <%# <% if current_user.id == @post.user_id %>
     <% if @user.id == current_user.id %>
      <%= link_to "編集", edit_user_registration_path %>
     <% end %>
-     <%# <a id="one" href="#"><i class="ion-ios-checkmark-outline"></i></a>
-    # <a id="two" href="#"><i class="ion-ios-alarm-outline"></i></a>
-    # <a id="three" href="#"><i class="ion-ios-heart-outline"></i></a>
-    # <a id="all" href="#"><i class="ion-ios-star-outline"></i></a> %>
-     <%# <% end %>
     
   </div>
   <div class="clearfix"></div>
@@ -53,12 +47,17 @@
       
       
         <% @favorite_posts.each do |post| %>
-          <hr>
-          <p><i class="fa fa-thumbs-up"></i><%=link_to  post_path(post.id) %></p>
+          
+          <i class="fa fa-heart"></i><% link_to  post_path(post.id)  %>
+            <span class="task-time"><%= @user.created_at.strftime("%Y-%m-%d %H:%M") %></span>
+          
+            <span class="task-title"><%= post.user.nickname%></span>
+            <span class="task-title"><%= post.title%></span>
+            <span class="task-cat"><%= post.text%></span>
         <% end %>
 
-      </div>
-      <%# <li class="two green">
+      <%# </div>
+      <li class="two green">
         <span class="task-title">Design Explorations</span>
         <span class="task-time">2pm</span>
         <span class="task-cat">Company Web site</span>
@@ -90,10 +89,10 @@
         <span class="task-title">Team Meeting</span>
         <span class="task-time">2pm</span>
         <span class="task-cat">Hangouts</span>
-      </li>
+      </li> %>
 
     </ul>
-  </div> %>
+  </div>
  </div>
 <div class="underlay-photo"></div>
 <div class="underlay-black"></div>

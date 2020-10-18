@@ -51,12 +51,10 @@ ul {
 
 }
 .center_c{
-  font-size: 20px;
+  font-size: 15px;
   opacity: 0.5;
   padding: 0.5em 1em;
-  margin: 2em 0;
-  font-weight: bold;
-  border: solid 3px white;
+  
 }
 
 *,
@@ -98,12 +96,9 @@ a {
 .episode__number {
   font-size: 30px;
   font-weight: 600;
-  padding: 10px 0;
-  position: sticky;
+  padding: 20px 0;
   top: 0;
   text-align: center;
-  height: calc(10vw + 20px);
-  transition: all 0.2s ease-in;
 }
 
 .episode__content {

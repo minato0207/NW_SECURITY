@@ -7,7 +7,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :post_tag_relations,dependent: :destroy
   has_many :tags, through: :post_tag_relations
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   has_many :favorites
   has_one_attached :image
@@ -24,6 +24,11 @@ class Post < ApplicationRecord
       Post.where("security_id = #{search}")
     #  else
     #   puts 投稿がありません
+    end
+
+    def self.search(search)
+      return Post.all unless search
+      Post.where(['content LIKE ?', "%#{search}%"])
     end
   end
 

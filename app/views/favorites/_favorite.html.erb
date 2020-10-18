@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+    <% if post.favorited_by?(current_user) %>
+        <i class="fa fa-heart like-btn"><%=link_to post.favorites.count, post_favorites_path(post.id), method: :delete, remote: true %></i>
+    <% else %>
+        <i class="fa fa-heart unlike-btn"><%=link_to post.favorites.count, post_favorites_path(post.id), method: :post, remote: true %></i>
+    <% end %>
+<% else %>
+   <i class="fa fa-heart"><%= post.favorites.count %></i>
+<% end %>

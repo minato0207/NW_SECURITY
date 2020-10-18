@@ -1,0 +1,50 @@
+<div class="contents_row">
+<span class="name">
+      <a href="/users/<%= @post.user.id %>">
+        <%= @post.user.nickname %>
+      </a>
+    </span>
+  <% if user_signed_in? && current_user.id == @post.user_id %>
+    <div class="more">
+    
+    </div>
+     <% end %>
+     <div class ="post_all">
+        <p class ="post_title"><%= @post.title%></p>
+        <p class ="post_text"><%= @post.text %></p>
+        <span class="task-time"><%= @post.created_at.strftime("%Y-%m-%d %H:%M") %></span>
+     </div>
+   
+    
+     
+     <div id="favorites_buttons_<%= @post.id %>">
+         <%= render partial: 'favorites/favorite', locals: { post: @post} %>
+    </div>
+    
+  </div>
+  <div class="container1">
+    <div class="comments">
+     <div class = "comments_itirann">
+      <h4>コメント一覧</h4>
+      </div>
+
+      <div class="container pt-5">
+        <div class="row mb-3">
+          <div class="col-lg-8 offset-lg-2">
+            <%= form_with(model: [@post, @comment], remote: true) do |f| %>
+              <%= f.label :text, t('.comment')%>
+              <%= f.text_area :text, class: "form-control mb-3", placeholder: "コメント" , rows: "4" %>
+              <%= f.submit t('投稿する'), class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
+          <%= render partial: 'shared/comments_area', locals: {comments: @comment} %>
+      </div>
+
+      
+      
+    </div>
+  </div>
+</div>
+<div class="underlay-photo"></div>
+<div class="underlay-black"></div>

@@ -1,8 +1,8 @@
 // Place all the styles related to the top controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,700);
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+// @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:400,700);
+// @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
 
 
 $slider-length: 4;
@@ -19,9 +19,9 @@ $active-color: rgb(99, 96, 96);
 html,body { 
     height: 100%;
     box-sizing: border-box;
-   
-
+    padding: 60px;
 }
+
 
 
 
@@ -75,17 +75,18 @@ html,body {
 body {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 2rem;
-    line-height: 1.5;
+    line-height: 1.0;
     background:rgb(73, 72, 72);
     width: 100%;
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
     color: #fff;
-    padding: 60px;
+    
 }
 
 .slider {
-    height: 70%;
+   
+    height: 80%;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -93,15 +94,19 @@ body {
     align-items: flex-end;
     justify-content: center;
     overflow-x: hidden;
+
+  
+    
     
 
     
     
     &__nav {
+       
         width: $radioBtn-size;
         height: $radioBtn-size;
         margin: 1rem $radioBtn-size;
-        border-radius: 50%;
+        border-radius: 70%;
         z-index: 10;
         outline: $radioBtn-size / 2 solid $btn-color;
         outline-offset: $radioBtn-size / -2;
@@ -113,7 +118,7 @@ body {
         backface-visibility: hidden;
 
         &:checked {
-            animation: check 0.5s linear forwards;
+            animation: check 1s linear forwards;
 
             @for $i from 0 to $slider-length {
                 &:nth-of-type(#{$i+1}) {
@@ -178,6 +183,7 @@ body {
     &__post {
       color: rgb(99, 96, 96);
       
+      
     }
 
 }
@@ -225,11 +231,11 @@ a{
 
 
 h1{
-  width: 100%;
-  text-align: center;
-  padding: 50px 0;
-  // margin: auto;
-  // // font-size: 30px;
+  // width: 100%;
+  // text-align: center;
+  // padding: 50px 0;
+  // // margin: auto;
+  // // // font-size: 30px;
   
   
 

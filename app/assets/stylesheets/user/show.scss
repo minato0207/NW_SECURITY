@@ -20,15 +20,17 @@
 
 .muck-up {
   width: 800px;
-  height: 900px;
+  height: 1000px;
   margin:  auto;
   position: relative;
   overflow: hidden;
 }
 
 .overlay {
-  background: url(https://images.unsplash.com/photo-1602049763805-cc72f4121728?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60) no-repeat top /contain;
+  background: url(https://images.unsplash.com/photo-1567284364258-30c429a24b81?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60) no-repeat top /contain;
   position: absolute;
+  -ms-filter: blur(2px);
+  filter: blur(2px);
   left: 0;
   top: 0;
   right: 0;
@@ -41,7 +43,7 @@
   left: 0;
   top: 0;
   right: 0;
-  bottom: 0;
+  bottom: 100%;
   background: rgba(71, 32, 84, 0.5);
 }
 
@@ -62,6 +64,7 @@
   display: inline-block;
   float: left;
   vertical-align: bottom;
+  color: white;
 }
 
 .ion-android-menu {
@@ -88,12 +91,14 @@
 
 .user-details p {
   font-size: 11px;
+  color: white;
 }
 
 .user-details {
   float: left;
   margin-top: 5px;
   vertical-align: bottom;
+  color: white;
 }
 
 .user-details h4 {
@@ -137,7 +142,7 @@ span.toggle-btn.ion-android-funnel:hover{
   right: 25px;
   display: block;
   top: -46px;
-  color: #fff;
+  // color: #fff;
   z-index: 99;
   font-size: 22px;
   transition: all .4s cubic-bezier(.68, 1, .265, 1)
@@ -185,7 +190,8 @@ span.toggle-btn.ion-android-funnel:hover{
 }
 
 .muck-up .bottom {
-  background-color: #fff;
+  background-color: white;
+  
   min-height: 303px;
   z-index: 1;
   padding: 35px;
@@ -198,7 +204,7 @@ span.toggle-btn.ion-android-funnel:hover{
   content: '';
   position: absolute;
   top: -46px;
-  background: #fff;
+  background: white;
   left: -22px;
   right: 0;
   height: 100px;
@@ -208,7 +214,7 @@ span.toggle-btn.ion-android-funnel:hover{
 }
 
 .bottom .title {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .bottom .title h3 {
@@ -238,6 +244,7 @@ ul.tasks .task-cat {
   font-size: 10px;
   display: block;
   color: #888;
+  padding: 20px;
 }
 
 ul.tasks li {

@@ -143,15 +143,18 @@ input {
   top: 0;
 }
 .underlay-photo {
-  animation: hue-rotate 6s infinite;
-  background: url('https://31.media.tumblr.com/41c01e3f366d61793e5a3df70e46b462/tumblr_n4vc8sDHsd1st5lhmo1_1280.jpg');
+  // animation: hue-rotate 6s infinite;
+  background: url(https://images.unsplash.com/photo-1424581342241-2b1aba4d3462?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60);
   background-size: cover;
-  // -webkit-filter: grayscale(30%);
+  // -ms-filter: blur(2px);
+  // filter: blur(2px);
   z-index: -1;
 }
+
 .underlay-black {
   background: rgba(0,0,0,0.7);
   z-index: -1;
+ 
 }
 
 @keyframes hue-rotate {

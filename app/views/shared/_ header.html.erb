@@ -1,0 +1,32 @@
+<header class="header">
+  <div class="container1">
+    <h1 class="logo"><%= link_to "NETWORK SECURITY", root_path  %></h1>
+    <ul class="nav1">
+      <li>
+        <% if user_signed_in? %> <!-- ユーザーがログインしているか調べる -->
+          <!-- ユーザーがログインしていた時の処理 -->
+
+           
+             <%= current_user.nickname %>
+            
+           
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> <!-- ログアウトをする -->
+        <% else %>
+          <!-- ユーザーがログインしていなかった時の処理 -->
+         
+          <%= link_to "ログイン", new_user_session_path, class: 'post' %> <!-- ログイン画面に移行する -->
+          <%= link_to "新規登録", new_user_registration_path, class: 'post' %> <!-- 新規登録画面に移行する -->
+        <% end %>
+      
+      </li>
+
+      <li><%= link_to "検索", posts_path  %></li>
+
+      <li></li>
+
+      <li></li>
+
+    </ul>
+
+  </div>
+</header>

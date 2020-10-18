@@ -6,9 +6,9 @@ class User < ApplicationRecord
 
 
 
- has_many :posts
+ has_many :posts ,dependent: :destroy
  has_many :sns_credentials
- has_many :comments
+ has_many :comments, dependent: :destroy
  has_many :favorites
  has_many :favorite_posts, through: :favorites, source: :post
  has_one_attached :image
