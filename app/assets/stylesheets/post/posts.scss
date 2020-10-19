@@ -4,11 +4,12 @@
 
 .body_p{
   padding: 60px;
+  
 }
 
 .post_title_1{
   text-align: center;
-  color: wheat;
+  color: white;
   .post_title_1,p{
    
     padding: 20px;
@@ -42,13 +43,7 @@
   border-top: 2px solid white;
   margin: auto;
    opacity: 0.6;
-  //  padding: 0.5em 0.5em;
-  //   margin: 1em 0;
-  //   color: white;
-  //   background: wheat;
-  //   border-bottom: solid 6px rgb(139, 128, 106);
-  //   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
-  //   border-radius: 9px;
+  
 
 }
 
@@ -117,13 +112,19 @@
   width: 300px;
  }
 
- .tag_all_p {
-  border-bottom: 2px solid white;
-  border-top: 2px solid white;
+
+
+.find_7{
+  border-bottom: 2px solid wheat;
+  border-top: 2px solid wheat;
   margin: auto;
-
-
- }
+  background-color: rgba(85, 207, 203, 0.55)
+  
+  
+}
+.find_7 h4 {
+  color: white;
+}
  
 
 

@@ -1,72 +1,50 @@
 <%= link_to root_path do%>
       <h3 class="center_i">←トップへ戻る</h3>
     <% end %>
-<header class="header">
-  <div class="container1">
-    <h1 class="logo"><%= link_to "NETWORK SECURITY", root_path  %></h1>
-    <ul class="nav1">
-      <li>
-        <% if user_signed_in? %> <!-- ユーザーがログインしているか調べる -->
-          <!-- ユーザーがログインしていた時の処理 -->
-         
-           <%= link_to current_user.nickname, user_path(current_user.id), method: :get%>
-         
-           
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> <!-- ログアウトをする -->
-        <% else %>
-          <!-- ユーザーがログインしていなかった時の処理 -->
-         
-          <%= link_to "ログイン", new_user_session_path, class: 'post' %> <!-- ログイン画面に移行する -->
-          <%= link_to "新規登録", new_user_registration_path, class: 'post' %> <!-- 新規登録画面に移行する -->
-        <% end %>
+
+
+    <div class ="post_title_1">
+       <h2>Protect your app in the opinion of someone</h2>
+       <p>誰かの意見であなたのアプリを守る</p>
+
       
-      </li>
-
-      <li><%= link_to "検索", posts_path  %></li>
-
-      <li></li>
-
-      <li></li>
-
-    </ul>
-
-  </div>
-</header>
+      <div class="banner"></div>
 
 
-<div class="banner"></div>
+
+
 <div class="container">
 
-  <% @posts.each do |post| %>
-
   
-   <%= link_to user_path(post.user_id) do%>
-     <div class="episode__number"><%= post.user.nickname %></div>
+<% @posts.each do |post| %>
+  <%= link_to user_path(post.user_id) do%>
+    <div class="episode__number"><%= post.user.nickname %></div>
     <% end %>
 
   
-     <div class="episode__content">
-       <%= link_to edit_post_path(post.id), method: :get do%>
+    <div class="episode__content">
+      <%= link_to edit_post_path(post.id), method: :get do%>
         <div class="title">"<%= post.title%>"
-       <% end %>
-      </div>
- 
-
-     <div class="story">
-       <%= post.text.truncate(50) %>
+      <% end %>
       </div>
 
-       <ul class="tag">
-          <li class="tag-list">
+
+    <div class="story">
+      <%= post.text.truncate(50) %>
+      </div>
+
+      <ul class="tag">
+        <li class="tag-list">
+        
+          <% post.tags.each do |tag| %>
+            #<%= tag.name %>
+          <%end%>
           
-             <% post.tags.each do |tag| %>
-               #<%= tag.name %>
-             <%end%>
-            
-          </li>
-        </ul>
+        </li>
+      </ul>
 
-   <% end %>
+<% end %>
+  
 
  
     
