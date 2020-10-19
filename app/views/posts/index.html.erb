@@ -5,25 +5,16 @@
     <% end %>
 
 
-    
-
-     <div class ="post_title_1">
-       <h2>Protect your app in the opinion of someone</h2>
-       <p>誰かの意見であなたのアプリを守る</p>
-
-      
-      <div class="banner">Search!!</div>
-
-       
-      
- 
-     <p class ="tag_all_p"><i class="fa fa-arrow-down"></i> タグで探す <i class="fa fa-arrow-down"></i></p>
+     <div class ="find_7">
+       <h4><i class="fa fa-arrow-down"></i> タグで探す <i class="fa fa-arrow-down"></i></h4>
+      </div>
       <li class ="tag_all">
-       <ul><% @tag_lists.each do |list|%>
-         <%= link_to list.name,post_path(tag_id: list.id), class: 'tag_list'%>
-         <% end %>
+      <ul><% @tag_lists.each do |list|%>
+        <%= link_to list.name,post_path(tag_id: list.id), class: 'tag_list'%>
+        <% end %>
         </ul>
-     </li>
+    </li>
+    
 
     <p class="tag_list_box">
        <% tag.each do |tag|%>
