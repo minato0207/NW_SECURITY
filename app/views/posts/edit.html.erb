@@ -24,23 +24,23 @@
   </div>
   <div class="container1">
     <div class="comments">
-     <div class = "comments_itirann">
-      <h4>コメント一覧</h4>
-      </div>
-
-      <div class="container pt-5">
-        <div class="row mb-3">
-          <div class="col-lg-8 offset-lg-2">
-            <%= form_with(model: [@post, @comment], remote: true) do |f| %>
-              <%= f.label :text, t('.comment')%>
-              <%= f.text_area :text, class: "form-control mb-3", placeholder: "コメント" , rows: "4" %>
-              <%= f.submit t('投稿する'), class: "btn btn-primary" %>
-            <% end %>
+     <div class="row">
+        <ul>
+            <li class="comment-create">
+                <h3 class="text-left title">レビュー</h3>
+            </li>
+            <li id="comments_area">
+                <%= render partial: 'comments/index', locals: { comments: @comments } %>
+            </li>
+        </ul>
+    <hr>
+      <% if user_signed_in? %>
+          <div class="comment-create">
+              <h3 class="text-left">レビューを投稿する</h3>
+              <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
           </div>
-        </div>
-          <%= render partial: 'shared/comments_area', locals: {comments: @comment} %>
-      </div>
-
+      <% end %>
+</div>
       
       
     </div>

@@ -76,7 +76,7 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find(params[:id])
     @comment = Comment.new
-    @comments = @post.comments.includes(:user)
+    @comments = @post.comments.order(created_at: :desc)
   end
   
   

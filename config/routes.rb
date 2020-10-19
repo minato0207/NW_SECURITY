@@ -11,11 +11,11 @@ Rails.application.routes.draw do
    registrations: 'users/registrations'
  }
   
-  resources :users, only: :show 
+  
 
   root 'top#index'
   resources :posts  do
-    resources :comments, only: [:create, :edit, :update, :destroy]
+    resources :comments, only: [:create,  :destroy]
     
     resource :favorites, only: [:create, :destroy]
 
@@ -33,4 +33,6 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
+
+  resources :users, only: :show 
 end
