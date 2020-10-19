@@ -1,20 +1,24 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only:[:destroy]
+ 
+
   def create
-    @comment = current_user.comments.build(comment_params)
-    @comment.save!
+    @post = Post.find(params[:post_id])
+    #投稿に紐づいたコメントを作成
+    @comment = @post.comments.build(comment_params)
+   
+    # @comment.user_id = current_user.id
+    @comment.save
+    render :index
   end
 
-  def edit
+ 
   
-  end
-
-  def update
   
-  end
 
   def destroy
-    @comment.destroy!
+      @comment = Comment.find(params[:id])
+      @comment.destroy
+      render :index
   end
 
   
@@ -23,11 +27,9 @@ class CommentsController < ApplicationController
 
   private
 
-  def set_comment
-    @comment = Comment.find_by(id: params[:id])
-  end
+  
 
   def comment_params
-    params.require(:comment).permit(:text).merge(user_id: current_user.id, post_id: params[:post_id])
+    params.permit(:post_id).merge(user_id: current_user.id, text: params[:comment][:text])
   end
 end
