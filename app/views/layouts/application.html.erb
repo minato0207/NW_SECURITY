@@ -24,6 +24,8 @@
           <!-- ユーザーがログインしていた時の処理 -->
          
            <%= link_to current_user.nickname, user_path(current_user.id), method: :get%>
+
+           <%= link_to "新規投稿",  new_post_path %>
          
            
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> <!-- ログアウトをする -->
