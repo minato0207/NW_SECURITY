@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: NW_SECURITY_production
-  username: NW_SECURITY
-  password: <%= ENV['NW_SECURITY_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
