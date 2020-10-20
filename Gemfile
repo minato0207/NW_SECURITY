@@ -71,3 +71,10 @@ gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 gem 'kaminari'
 gem "aws-sdk-s3", require: false
+group :development, :test do
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
+end
