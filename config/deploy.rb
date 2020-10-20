@@ -11,7 +11,7 @@ lock "3.14.1"
 set :application, "NW_SECURITY"
 
 # どのリポジトリからアプリをpullするかを指定する
-set :repo_url,  'git@github.com:minato0207/minato0207/NW_SECURITY.git'
+set :repo_url,  'git@github.com:minato0207/NW_SECURITY.git'
 
 
 # バージョンが変わっても共通で参照するディレクトリを指定
