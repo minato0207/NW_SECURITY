@@ -11,6 +11,7 @@ require("index")
 // require("channels")
 // require("../tag")
 // require("top")
+window.$ = $;
 
 
 
