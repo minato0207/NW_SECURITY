@@ -39,6 +39,9 @@
   http://54.168.234.64/
 
   ## テストアカウント
+  - ユーザー名 :  test
+  - email      :  test@i.com
+  - pass       :  test11
 
 
 
@@ -93,6 +96,7 @@
 # DEMO
 
 ## 新規登録
+- 
 ![alt](app/assets/images/login.jpg)
 
 ## 投稿一覧表示画面
@@ -106,17 +110,6 @@
 
 ## 投稿詳細ページ
 ![alt](app/assets/images/shousai.gif)
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -281,7 +274,7 @@
 | content_type  | string     |                                |
 | metadata      | text       |                                |
 | byte_size     | bigint     |    null: false                 |
-| checksum      | string     |    null: false                |
+| checksum      | string     |    null: false                 |
 | created_at    | datetime   |                                |
 | :key          | index      |                                |
 
@@ -300,25 +293,3 @@
 
 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
