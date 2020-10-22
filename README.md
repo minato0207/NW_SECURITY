@@ -36,7 +36,7 @@
 
   ## URL
 
-  http://54.168.234.64/
+  https://www.network-security-app.com/
 
   ## テストアカウント
   - ユーザー名 :  test
