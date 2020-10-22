@@ -70,6 +70,9 @@
   - Node.js
   - MariaDB
   - Unicorn
+  - Route53
+  - Certificate Manager
+  - CCL化
 
 
 
