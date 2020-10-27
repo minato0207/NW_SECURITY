@@ -5,13 +5,15 @@
 
 
 require("@rails/ujs").start()
-require("turbolinks").start()
 require("@rails/activestorage").start()
 require("index")
 // require("channels")
 // require("../tag")
 // require("top")
+require('jquery')
 window.$ = $;
+import 'bootstrap';
+import '../stylesheets/application';
 
 
 
