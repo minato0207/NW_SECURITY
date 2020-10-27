@@ -12,6 +12,7 @@ class User < ApplicationRecord
  has_many :favorites
  has_many :favorite_posts, through: :favorites, source: :post
  has_one_attached :image
+ 
 
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
