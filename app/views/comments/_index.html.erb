@@ -9,7 +9,7 @@
                 <%# <%= attachment_image_tag comment.user, :profile_image, fallback: "no_image.jpg", class:"comment-image", size: "40x40" %>
             </div>
             <div class="comment-text">
-                <p><%= link_to "@#{comment.user.nickname}", users_show_path(comment.user.id) %></p>
+                <p class="comment-text-name"><%= link_to "@#{comment.user.nickname}", users_show_path(comment.user.id) %></p>
                 <div class="comment-entry">
                     <%= comment.text %>
                     <% if comment.user == current_user %>

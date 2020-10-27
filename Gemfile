@@ -48,6 +48,8 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem "rspec"
+  gem "rspec_junit_formatter"
 end
 
 group :production do
@@ -78,3 +80,4 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
 end
+
