@@ -50,9 +50,9 @@ jobs:
       - run: bundle exec rake db:schema:load
 
 
-      - run:
-          name: Rubocop
-          command: bundle exec rubocop
+      # - run:
+      #     name: Rubocop
+      #     command: bundle exec rubocop
 
 
       - run:
