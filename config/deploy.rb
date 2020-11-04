@@ -1,9 +1,4 @@
 # config valid for current version and patch releases of Capistrano
-
-
-
-
-
 # capistranoのバージョンを記載。固定のバージョンを利用し続け、バージョン変更によるトラブルを防止する
 lock "3.14.1"
 
@@ -22,7 +17,7 @@ set :rbenv_ruby, '2.6.5'
 
 # どの公開鍵を利用してデプロイするか
 set :ssh_options, auth_methods: ['publickey'],
-                                  keys: ['~/.ssh/soleil77.pem'] 
+                  keys: ['~/.ssh/soleil77.pem'] 
 
 # プロセス番号を記載したファイルの場所
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
@@ -31,20 +26,28 @@ set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
 
-namespace :deploy do
-  task :restart do
-    invoke 'unicorn:restart'
-  end
+# namespace :deploy do
+#   task :restart do
+#     invoke 'unicorn:restart'
+#   end
 
 # デプロイ処理が終わった後、Unicornを再起動するための記述
 after 'deploy:publishing', 'deploy:restart'
-namespace :deploy do
-  task :restart do
-    invoke 'unicorn:restart'
-  end
-end
-before :starting, 'deploy:upload'
-after :finishing, 'deploy:cleanup'
+  namespace :deploy do
+    task :restart do
+      invoke 'unicorn:restart'
+    end
+
+  # desc `upload master.key`
+  # task :upload do
+  #   on roles(:app) do |_host|
+  #     execute "mkdir -p #{shared_path}/config" if test "[ ! -d #{shared_path}/config ]"
+  #     # upload!(‘config/master.key’, “#{shared_path}/config/master.key”)
+  #     end
+  #   end
+  # end
+  before :starting, 'deploy:upload'
+  after :finishing, 'deploy:cleanup'
 end
 
 # Default branch is :master
