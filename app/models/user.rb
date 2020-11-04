@@ -11,7 +11,7 @@ class User < ApplicationRecord
  has_many :comments, dependent: :destroy
  has_many :favorites
  has_many :favorite_posts, through: :favorites, source: :post
- has_one_attached :image
+ mount_uploader :image, ImageUploader
  
 
   def self.from_omniauth(auth)

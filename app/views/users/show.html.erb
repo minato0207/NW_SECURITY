@@ -10,7 +10,7 @@
     <div class="user-profile">
     <%# 画像をつける %>
 
-      <%= image_tag @user.image.variant(resize: '100x100'), class: 'message-image' if @user.image.attached? %>
+      <img src=<%= @user.image %> class = "icon_image">
 
       <div class="user-details">
         <%= @user.nickname %>
