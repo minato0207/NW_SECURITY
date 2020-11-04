@@ -1,4 +1,3 @@
-
 default: &default
   adapter: mysql2
   encoding: utf8
@@ -13,11 +12,9 @@ development:
   <<: *default
   database: NW_SECURITY_development
 
-
 test:
   <<: *default
   database: NW_SECURITY_test
-
 
 production:
   <<: *default
