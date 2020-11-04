@@ -1,40 +1,28 @@
-
 version: 2
 jobs:
   build:
     docker:
-      
       - image: circleci/ruby:2.6.5-node-browsers
-        environment:
+      - image: circleci/mysql:5.6.47
 
-          - BUNDLER_VERSION: 2.0.2
-
-          - RAILS_ENV: 'test'
-      
-          - image: circleci/mysql:5.6.47
-
-       environment:
-          - MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
-          - MYSQL_ROOT_HOST: '%'
-
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD: 'true'
+      - MYSQL_ROOT_HOST: '%'
+      - RAILS_ENV: 'test'
+      - BUNDLER_VERSION: 2.0.2
       
 
     working_directory: ~/NW_SECURITY
-
     steps:
       - checkout
-
-      
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "Gemfile.lock" }}
-            
             - v1-dependencies-
 
       - run:
           name: install dependencies
           command: |
-
             gem install bundler -v 2.0.2
             bundle install --jobs=4 --retry=3 --path vendor/bundle
 
@@ -43,18 +31,14 @@ jobs:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
-
       - run: mv config/database.yml.ci config/database.yml 
 
-     
       - run: bundle exec rake db:create
       - run: bundle exec rake db:schema:load
-
 
       # - run:
       #     name: Rubocop
       #     command: bundle exec rubocop
-
 
       - run:
           name: run tests
@@ -63,8 +47,6 @@ jobs:
             TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
               circleci tests split --split-by=timings)"
 
-
-
             bundle exec rspec \
               --format progress \
               --format RspecJunitFormatter \
@@ -72,7 +54,6 @@ jobs:
               --format progress \
               $TEST_FILES
 
-     
       - store_test_results:
           path: /tmp/test-results
       - store_artifacts:
@@ -80,7 +61,14 @@ jobs:
           destination: test-results
 
       - add_ssh_keys:
-        fingerprints:
-          - "84:ef:0e:1c:cb:a1:4a:59:63:89:91:08:29:83:fc:62"
+          fingerprints:
+            - "84:ef:0e:1c:cb:a1:4a:59:63:89:91:08:29:83:fc:62"
 
+      - deploy:
+          name: Capistrano deploy
+          command: |
+            if [ "${CIRCLE_BRANCH}" != "master" ]; then
+              exit 0
+            fi
+            bundle exec cap production deploy
       
