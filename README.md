@@ -73,6 +73,8 @@
   - Route53
   - Certificate Manager
   - CCL化
+  - CircleCI
+  - Docker
 
 # インフラ
 
